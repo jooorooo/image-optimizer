@@ -2,6 +2,7 @@
 
 namespace Simexis\ImageOptimizer;
 
+use Simexis\ImageOptimizer\Optimizers\Jpegoptim;
 use Simexis\ImageOptimizer\Optimizers\Svgo;
 use Simexis\ImageOptimizer\Optimizers\Optipng;
 use Simexis\ImageOptimizer\Optimizers\Gifsicle;
@@ -13,8 +14,13 @@ class OptimizerChainFactory
     public static function create(): OptimizerChain
     {
         return (new OptimizerChain())
-            ->addOptimizer(new Jpegtran([
-                '-optimize'
+//            ->addOptimizer(new Jpegtran([
+//                '-optimize'
+//            ]))
+
+            ->addOptimizer(new Jpegoptim([
+                '-p',
+                '-m 60'
             ]))
 
             ->addOptimizer(new Pngquant([
