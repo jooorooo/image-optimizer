@@ -25,9 +25,9 @@ class OptimizerChainFactory
 //            ]))
 
             ->addOptimizer(new JpegRecompress([
-                '--quality medium',
-                '--method smallfry',
-                '--min 40'
+                '--quality high',
+//                '--method ms-ssim',
+//                '--min 100'
             ]))
 
             ->addOptimizer(new Pngquant([
