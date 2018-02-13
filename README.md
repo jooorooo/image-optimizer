@@ -34,6 +34,7 @@ composer require simexis/image-optimizer
 
 The package will use these optimizers if they are present on your system:
 
+- [jpeg-recompress](https://github.com/imagemin/jpeg-recompress-bin)
 - [JpegTran](http://jpegclub.org/jpegtran/)
 - [Optipng](http://optipng.sourceforge.net/)
 - [Pngquant 2](https://pngquant.org/)
