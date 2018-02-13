@@ -3,6 +3,7 @@
 namespace Simexis\ImageOptimizer;
 
 use Simexis\ImageOptimizer\Optimizers\Jpegoptim;
+use Simexis\ImageOptimizer\Optimizers\JpegRecompress;
 use Simexis\ImageOptimizer\Optimizers\Svgo;
 use Simexis\ImageOptimizer\Optimizers\Optipng;
 use Simexis\ImageOptimizer\Optimizers\Gifsicle;
@@ -18,9 +19,15 @@ class OptimizerChainFactory
 //                '-optimize'
 //            ]))
 
-            ->addOptimizer(new Jpegoptim([
-                '-p',
-                '-m 60'
+//            ->addOptimizer(new Jpegoptim([
+//                '-p',
+//                '-m 60'
+//            ]))
+
+            ->addOptimizer(new JpegRecompress([
+                '--quality medium',
+                '--method smallfry',
+                '--min 40'
             ]))
 
             ->addOptimizer(new Pngquant([
